@@ -32,4 +32,4 @@ package: resources
 groups:
   - path: assets/imgs
     class_name: Images
-    types: [ .png, ]
+    types: [ .png, .svg ]

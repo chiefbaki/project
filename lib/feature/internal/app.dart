@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/feature/presentation/login_page.dart';
+import 'package:flutter_application_1/feature/presentation/page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,11 +7,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ScreenUtilInit(
+    return ScreenUtilInit(
       designSize: Size(430, 932),
       child: MaterialApp(
+        theme: ThemeData(
+          scaffoldBackgroundColor: Colors.black,
+          appBarTheme: AppBarTheme(
+            color: Colors.black
+          )
+        ),
         debugShowCheckedModeBanner: false,
-        home: LoginPage(),
+        home: ListItemsPage(),
       ),
     );
   }
