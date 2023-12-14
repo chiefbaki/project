@@ -13,6 +13,7 @@ class TextData extends StatelessWidget {
         child: TextField(
           controller: controller,
           decoration: InputDecoration(
+            contentPadding: const EdgeInsets.all(20),
             hintText: "Click and start typing",
             hintStyle: AppFonts.s13w500,
             enabledBorder:

@@ -11,7 +11,7 @@ class ListBtn extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         text,
-        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white),
+        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white),
       ),
     );
   }

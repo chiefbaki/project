@@ -1,13 +1,15 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/feature/presentation/routes/app_router.gr.dart';
 import 'package:flutter_application_1/feature/presentation/theme/app_fonts.dart';
 import 'package:flutter_application_1/feature/presentation/widgets/data.dart';
 import 'package:flutter_application_1/feature/presentation/widgets/forgot_pass_btn.dart';
 import 'package:flutter_application_1/feature/presentation/widgets/sign_in_btn.dart';
 import 'package:flutter_application_1/feature/presentation/widgets/sign_up_btn.dart';
 import 'package:flutter_application_1/feature/presentation/widgets/stack.dart';
-import 'package:flutter_application_1/resources/resources.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+@RoutePage()
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -22,15 +24,14 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       body: MyStack(
-        child: Expanded(
+        child: Flexible(
           child: Center(
             child: Container(
                 width: 290.w,
-                height: 345.h,
+                height: MediaQuery.of(context).size.height * 0.4,
                 decoration: BoxDecoration(
-                    color: Color(0xffFFFEFE),
+                    color: const Color(0xffFFFEFE),
                     borderRadius: BorderRadius.circular(12)),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
@@ -39,8 +40,8 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const SizedBox(
-                        height: 33,
+                      SizedBox(
+                        height: 33.h,
                       ),
                       const Center(
                         child: Text(
@@ -80,7 +81,9 @@ class _LoginPageState extends State<LoginPage> {
                           child: SignInBtn(
                             onPressed: () {},
                           )),
-                      SignUpBtn(onPressed: () {}),
+                      SignUpBtn(onPressed: () {
+                        context.router.push(const RegRoute());
+                      }),
                       ForgotPassBtn(onPressed: () {}),
                     ],
                   ),

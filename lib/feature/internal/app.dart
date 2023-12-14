@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/feature/presentation/page.dart';
+import 'package:flutter_application_1/feature/presentation/routes/app_router.dart';
+import 'package:flutter_application_1/feature/presentation/screens/home_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyApp extends StatelessWidget {
@@ -8,16 +9,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(430, 932),
-      child: MaterialApp(
+      designSize: const Size(430, 932),
+      child: MaterialApp.router(
+        routerConfig: AppRouter().config(),
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.black,
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
             color: Colors.black
           )
         ),
         debugShowCheckedModeBanner: false,
-        home: ListItemsPage(),
       ),
     );
   }

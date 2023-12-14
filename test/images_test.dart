@@ -16,6 +16,9 @@ void main() {
     expect(File(Images.image2).existsSync(), isTrue);
     expect(File(Images.image3).existsSync(), isTrue);
     expect(File(Images.image4).existsSync(), isTrue);
+    expect(File(Images.image5).existsSync(), isTrue);
+    expect(File(Images.image6).existsSync(), isTrue);
+    expect(File(Images.image7).existsSync(), isTrue);
     expect(File(Images.location).existsSync(), isTrue);
   });
 }
